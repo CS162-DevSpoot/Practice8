@@ -29,52 +29,82 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            stringTextBox = new TextBox();
             groupBox2 = new GroupBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            displayLabel = new Label();
+            captializeButton = new Button();
+            exitButton = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(stringTextBox);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(776, 52);
+            groupBox1.Size = new Size(318, 52);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Enter Your String";
             // 
+            // stringTextBox
+            // 
+            stringTextBox.Location = new Point(6, 22);
+            stringTextBox.Name = "stringTextBox";
+            stringTextBox.Size = new Size(305, 23);
+            stringTextBox.TabIndex = 0;
+            // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(displayLabel);
             groupBox2.Location = new Point(12, 70);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(776, 52);
+            groupBox2.Size = new Size(318, 52);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
             // 
-            // textBox1
+            // displayLabel
             // 
-            textBox1.Location = new Point(6, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            displayLabel.BackColor = SystemColors.ControlLight;
+            displayLabel.Location = new Point(6, 19);
+            displayLabel.Name = "displayLabel";
+            displayLabel.Size = new Size(305, 23);
+            displayLabel.TabIndex = 0;
+            displayLabel.Text = "So it goes'...";
+            displayLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // captializeButton
             // 
-            textBox2.Location = new Point(6, 22);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 0;
+            captializeButton.BackColor = Color.ForestGreen;
+            captializeButton.ForeColor = SystemColors.ControlLightLight;
+            captializeButton.Location = new Point(12, 128);
+            captializeButton.Name = "captializeButton";
+            captializeButton.Size = new Size(318, 23);
+            captializeButton.TabIndex = 2;
+            captializeButton.Text = "Captialize";
+            captializeButton.UseVisualStyleBackColor = false;
+            captializeButton.Click += capitializeButtonClicked;
+            // 
+            // exitButton
+            // 
+            exitButton.BackColor = Color.Tomato;
+            exitButton.ForeColor = SystemColors.ControlLightLight;
+            exitButton.Location = new Point(12, 157);
+            exitButton.Name = "exitButton";
+            exitButton.Size = new Size(318, 23);
+            exitButton.TabIndex = 3;
+            exitButton.Text = "EXIT";
+            exitButton.UseVisualStyleBackColor = false;
+            exitButton.Click += exitButtonClicked;
             // 
             // SentanceCapitalizer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(340, 192);
+            Controls.Add(exitButton);
+            Controls.Add(captializeButton);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "SentanceCapitalizer";
@@ -82,7 +112,6 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -90,7 +119,9 @@
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox stringTextBox;
+        private Label displayLabel;
+        private Button captializeButton;
+        private Button exitButton;
     }
 }
